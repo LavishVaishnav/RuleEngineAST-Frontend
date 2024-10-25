@@ -1,105 +1,145 @@
-# 🎨 Rule Engine AST - Frontend
+# Rule Engine AST - Frontend
+
+Access the site here:- https://ruleengineast-frontend.onrender.com/
 
 Welcome to the **Rule Engine AST** frontend! This project is built using **React** and provides an intuitive interface for creating, combining, and evaluating rules. The frontend communicates with the backend via **axios** to manage rule interactions seamlessly.
 
- <!-- Add the correct path for your image -->
+## Table of Contents
+- [Features](#features)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Running the Application](#running-the-application)
+- [Building the Application](#building-the-application)
+- [Deployment](#deployment)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
 
-## 📋 Table of Contents
-- [✨ Features](#-features)
-- [⚙️ Prerequisites](#-prerequisites)
-- [🔧 Installation](#-installation)
-- [🔑 Configuration](#-configuration)
-- [🛠 Running the Application](#-running-the-application)
-- [🏗 Building the Application](#-building-the-application)
-- [🚀 Deployment](#-deployment)
-- [🛠 Tech Stack](#-tech-stack)
+## Features
 
-## ✨ Features
+- Create new rules by entering rule strings.
+- Combine rules using logical operators (AND/OR).
+- Evaluate rules based on user data input.
+- Interact with the backend via RESTful APIs.
 
-- 📝 **Create** new rules by entering rule strings.
-- 🔗 **Combine** rules using logical operators (AND/OR).
-- 📊 **Evaluate** rules based on user data input.
-- 📡 **Interact** with the backend via RESTful APIs.
-
-## ⚙️ Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-- ![Node.js](https://img.shields.io/badge/-Node.js-339933?logo=nodedotjs&logoColor=white) **Node.js** (version 16 or above)
-- ![npm](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white) **npm** or ![yarn](https://img.shields.io/badge/-yarn-2C8EBB?logo=yarn&logoColor=white) **yarn** (for managing dependencies)
+- **Node.js** (version 16 or above)
+- **npm** or **yarn** (for managing dependencies)
 
-## 🔧 Installation
+## Installation
 
 1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/your-username/RuleEngineAST-Frontend.git
    cd RuleEngineAST-Frontend
+   ```
 
-<img width="785" alt="Screenshot 2024-10-20 at 4 29 47 PM" src="https://github.com/user-attachments/assets/40f9a639-49fa-4765-8ff1-5202fc433140">
+2. **Install dependencies**:
 
-Install dependencies:
+   Using npm:
+   
+   ```bash
+   npm install
+   ```
+   
+   Or using yarn:
+   
+   ```bash
+   yarn install
+   ```
 
+## Configuration
 
-npm install
-or if using yarn:
+The frontend communicates with the backend API. To set up the backend URL, create an `.env` file in the root of your project with the following content:
 
-
-yarn install
-🔑 Configuration
-The frontend communicates with the backend API. You need to configure the backend URL by setting it in an .env file in the root of your project. The default backend URL is:
-
-env
-
+```
 REACT_APP_API_BASE_URL=https://ruleengineast-backend.onrender.com
-Make sure to replace this URL with the appropriate backend URL if needed.
+```
 
-🛠 Running the Application
+Replace `https://ruleengineast-backend.onrender.com` with the appropriate backend URL if needed.
+
+## Running the Application
+
 To start the application in development mode, run:
 
+Using npm:
 
+```bash
 npm start
-or if using yarn:
+```
 
+Or using yarn:
 
+```bash
 yarn start
-The application will be available at http://localhost:3000 by default.
+```
 
-🏗 Building the Application
+The application will be available at `http://localhost:3000` by default.
+
+## Building the Application
+
 To build the application for production, use the following command:
 
+Using npm:
 
+```bash
 npm run build
-or if using yarn:
+```
 
+Or using yarn:
+
+```bash
 yarn build
-This will create an optimized production build in the build/ directory, ready for deployment.
+```
 
-🚀 Deployment
-You can deploy the frontend to services like Netlify, Vercel, or Render. If you're using Render, follow these steps:
+This will create an optimized production build in the `build/` directory, ready for deployment.
 
-Push your code to GitHub or another Git hosting service.
-Create a new web service on Render by selecting your repository.
-Set the build command:
+## Deployment
 
-npm install && npm run build
-Set the publish directory to build/.
-Deploy your app, and your frontend will be live.
-🎨 UI Components
-CreateRule: Allows users to create a rule by entering a name, rule string, and parameters.
-CombineRules: Allows users to combine two rules using logical operators (AND/OR).
-EvaluateRule: Evaluates a created rule against user-provided data.
+You can deploy the frontend to services like Netlify, Vercel, or Render. For example, if you're using Render:
 
+1. Push your code to GitHub or another Git hosting service.
+2. Create a new web service on Render by selecting your repository.
+3. Set the build command:
+   
+   ```bash
+   npm install && npm run build
+   ```
+   
+4. Set the publish directory to `build/`.
+5. Deploy your app, and your frontend will be live.
 
+## Tech Stack
 
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: Fast development build tool.
+- **Tailwind CSS**: Utility-first CSS framework.
+- **Axios**: HTTP client for API communication.
+- **PostCSS**: Tool for transforming CSS with JavaScript plugins.
 
+## Project Structure
 
+```
+├── public
+│   └── index.html                # Main HTML file
+├── src
+│   ├── assets                    # Images, icons, and static assets
+│   ├── components                # Reusable React components
+│   │   ├── CreateRule.jsx        # Component to create a rule
+│   │   ├── CombineRules.jsx      # Component to combine rules
+│   │   └── EvaluateRule.jsx      # Component to evaluate rules
+│   ├── App.jsx                   # Main App component
+│   ├── main.jsx                  # Application entry point
+│   └── index.css                 # Global styles
+├── package.json                  # Project metadata and dependencies
+├── postcss.config.js             # PostCSS configuration for Tailwind CSS
+├── tailwind.config.js            # Tailwind CSS configuration
+├── vite.config.js                # Vite configuration
+├── .env                          # Environment variables (API base URL)
+├── README.md                     # Project documentation
+```
 
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
